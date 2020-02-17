@@ -5,7 +5,7 @@ RUN apk add --no-cache git make build-base && \
     cd vlmcsd/ && \
     make
 
-FROM alpine:latest
+FROM arm32v7/alpine:latest
 WORKDIR /root/
 COPY --from=builder /root/vlmcsd/bin/vlmcsd /usr/bin/vlmcsd
 EXPOSE 1688/tcp
